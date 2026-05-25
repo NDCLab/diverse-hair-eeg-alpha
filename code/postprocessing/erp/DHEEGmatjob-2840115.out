@@ -1,0 +1,22 @@
+/home/data/NDClab/analyses/diverse-hair-eeg-alpha/code/postprocessing/erp
+n121.panther.net
+Sun May 24 20:23:53 EDT 2026
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2021 The MathWorks, Inc.
+                  R2021b (9.11.0.1769968) 64-bit (glnxa64)
+                             September 17, 2021
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+{Error using dir
+Characters adjacent to a ** wildcard must be file separators.
+
+Error in create_mat_s1 (line 51)
+datafile_info=dir([data_location filesep 'sub-*' filesep 'eeg' filesep 'sub-*' task '_eeg_*' procStage '_' visitFileName '.set']);
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+} 

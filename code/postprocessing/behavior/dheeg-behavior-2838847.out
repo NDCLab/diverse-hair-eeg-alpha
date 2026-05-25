@@ -1,0 +1,23 @@
+/home/data/NDClab/analyses/diverse-hair-eeg-alpha/code/postprocessing/behavior
+n099.panther.net
+Sun May 24 15:58:48 EDT 2026
+flurm cpus per task: 6
+WARNING: $PATH does not agree with $PATH_modshare counter. The following directories' usage counters were adjusted to match. Note that this may mean that module unloading may not work correctly.
+ /home/share/bin/ /bin/
+Traceback (most recent call last):
+  File "/home/data/NDClab/analyses/diverse-hair-eeg-alpha/code/postprocessing/behavior/behavior_analysis.py", line 394, in <module>
+    full_df = pd.concat(list_of_ind_csv)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cknowlto/.conda/envs/READ-env/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 382, in concat
+    op = _Concatenator(
+         ^^^^^^^^^^^^^^
+  File "/home/cknowlto/.conda/envs/READ-env/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 445, in __init__
+    objs, keys = self._clean_keys_and_objs(objs, keys)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cknowlto/.conda/envs/READ-env/lib/python3.12/site-packages/pandas/core/reshape/concat.py", line 507, in _clean_keys_and_objs
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+
+ERROR conda.cli.main_run:execute(125): `conda run python -u behavior_analysis.py` failed. (See above for error)
+Behavior processing exited with errors:     raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate

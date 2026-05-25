@@ -1,0 +1,14 @@
+/home/data/NDClab/analyses/diverse-hair-eeg-alpha/code/postprocessing/behavior
+n099.panther.net
+Sun May 24 15:43:02 EDT 2026
+flurm cpus per task: 6
+WARNING: $PATH does not agree with $PATH_modshare counter. The following directories' usage counters were adjusted to match. Note that this may mean that module unloading may not work correctly.
+ /home/share/bin/ /bin/
+Traceback (most recent call last):
+  File "/home/data/NDClab/analyses/diverse-hair-eeg-alpha/code/postprocessing/behavior/behavior_analysis.py", line 47, in <module>
+    sys.stdout = open(f"{output_dataset_path}{output_path}{date_time}_log.txt", "wt")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/data/NDClab/analyses/dheeg-alpha/derivatives/behavior/s1_r1/24_05_2026_15_47_51_log.txt'
+
+ERROR conda.cli.main_run:execute(125): `conda run python -u behavior_analysis.py` failed. (See above for error)
+Behavior processing exited with errors: FileNotFoundError: [Errno 2] No such file or directory: '/home/data/NDClab/analyses/dheeg-alpha/derivatives/behavior/s1_r1/24_05_2026_15_47_51_log.txt'

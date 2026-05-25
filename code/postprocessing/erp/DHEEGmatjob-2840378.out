@@ -1,0 +1,576 @@
+/home/data/NDClab/analyses/diverse-hair-eeg-alpha/code/postprocessing/erp
+n109.panther.net
+Sun May 24 20:52:41 EDT 2026
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2021 The MathWorks, Inc.
+                  R2021b (9.11.0.1769968) 64-bit (glnxa64)
+                             September 17, 2021
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+
+
+
+*** Processing subject 1 (sub-290003_ker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290003/eeg/sub-290003_ker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290003/eeg/sub-290003_ker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 2 (sub-290004_flanker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290004/eeg/sub-290004_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290004/eeg/sub-290004_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 3 (sub-290005_flanker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290005/eeg/sub-290005_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290005/eeg/sub-290005_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 4 (sub-290006_flanker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290006/eeg/sub-290006_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290006/eeg/sub-290006_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 5 (sub-290007_flanker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290007/eeg/sub-290007_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290007/eeg/sub-290007_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 6 (sub-290008_flanker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290008/eeg/sub-290008_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290008/eeg/sub-290008_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 7 (sub-290009_flanker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290009/eeg/sub-290009_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290009/eeg/sub-290009_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 8 (sub-290010_flanker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290010/eeg/sub-290010_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290010/eeg/sub-290010_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 9 (sub-290011_flanker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290011/eeg/sub-290011_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290011/eeg/sub-290011_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 10 (sub-290012_flanker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290012/eeg/sub-290012_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290012/eeg/sub-290012_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 11 (sub-290013_flanker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290013/eeg/sub-290013_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290013/eeg/sub-290013_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 12 (sub-290014_flanker_eeg_processed_data_s1r1e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290014/eeg/sub-290014_flanker_eeg_processed_data_s1r1e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290014/eeg/sub-290014_flanker_eeg_processed_data_s1r1e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+
+
+
+*** Processing subject 13 (sub-290015_flanker_eeg_processed_data_s1_r1_e1.set) ***
+
+
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290015/eeg/sub-290015_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290015/eeg/sub-290015_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+[Warning: Column headers from the file were modified to make them valid MATLAB
+identifiers before creating variable names for the table. The original column
+headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as
+table variable names.] 
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290003/eeg/sub-290003_ker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290003/eeg/sub-290003_ker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 632 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Removing 547 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290004/eeg/sub-290004_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290004/eeg/sub-290004_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290005/eeg/sub-290005_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290005/eeg/sub-290005_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290006/eeg/sub-290006_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290006/eeg/sub-290006_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290007/eeg/sub-290007_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290007/eeg/sub-290007_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 518 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 426 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290008/eeg/sub-290008_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290008/eeg/sub-290008_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 548 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 486 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290009/eeg/sub-290009_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290009/eeg/sub-290009_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 709 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Removing 594 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290010/eeg/sub-290010_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290010/eeg/sub-290010_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290011/eeg/sub-290011_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290011/eeg/sub-290011_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 478 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 392 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290012/eeg/sub-290012_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290012/eeg/sub-290012_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 397 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 336 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290013/eeg/sub-290013_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290013/eeg/sub-290013_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 504 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Removing 387 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290014/eeg/sub-290014_flanker_eeg_processed_data_s1r1e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290014/eeg/sub-290014_flanker_eeg_processed_data_s1r1e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 766 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+Removing 652 trial(s)...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+pop_loadset(): loading file /home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290015/eeg/sub-290015_flanker_eeg_processed_data_s1_r1_e1.set ...
+Reading float file '/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290015/eeg/sub-290015_flanker_eeg_processed_data_s1_r1_e1.fdt'...
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.
+eeg_checkset: found empty values for field 'bvtime'
+              filling with values of other events in the same epochs
+eeg_checkset: found empty values for field 'visible'
+              filling with values of other events in the same epochs
+Event resorted by increasing latencies.

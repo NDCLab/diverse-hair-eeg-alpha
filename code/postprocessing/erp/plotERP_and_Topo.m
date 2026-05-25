@@ -1,0 +1,230 @@
+%
+% This script was created by George Buzzell for the NDC Lab EEG Training
+% Workshop on 02/22. This script uses parts of the "set up" structure from
+% the MADE preprocessing pipeline (Debnath, Buzzell, et. al., 2020)
+
+clear % clear matlab workspace
+clc % clear matlab command window
+
+%% setup; run this section before any other section below
+
+% MUST EDIT THIS
+%running in "EEG_training" folder on your computer
+main_dir = '/home/data/NDClab/datasets/diverse-hair-eeg-dataset';
+
+% Setting up other things
+
+%Location of MADE and ADJUSTED-ADJUST scripts
+addpath(genpath([main_dir filesep 'MADE-EEG-preprocessing-pipeline']));% enter the path of the EEGLAB folder in this line
+
+%Location of "EEG
+addpath(genpath([main_dir filesep 'eeglab13_4_4b']));% enter the path of the EEGLAB folder in this line
+
+%remove path to octave functions inside matlab to prevent errors when
+rmpath([main_dir filesep 'eeglab13_4_4b' filesep 'functions' filesep 'octavefunc' filesep 'signal'])
+
+% 1. Enter the path of the folder that has the data to be analyzed
+data_location = [main_dir filesep 'Data' filesep 'Processed_Data' filesep 'preprocessed_data'];
+
+% 2. Enter the path of the folder where you want to save the postprocessing outputs
+output_location = [main_dir filesep 'Data' filesep 'Processed_Data' filesep 'postprocessing'];
+
+% 3. Enter the path of the channel location file
+channel_locations = [main_dir filesep 'Data' filesep 'Raw_Data_Info' filesep 'CACS-128-X7-FIXED-64only.bvef'];
+
+% 4. Markers
+stimulus_markers = {'11', '12', '21', '22'};     
+respose_markers = {'111', '112', '121', '122','211', '212', '221', '222'};     
+
+% Read files to analyses
+datafile_names=dir('/home/data/NDClab/datasets/diverse-hair-eeg-dataset/derivatives/preprocessed/sub-290003/eeg');
+datafile_names=datafile_names(~ismember({datafile_names.name},{'.', '..', '.DS_Store'}));
+datafile_names={datafile_names.name};
+[filepath,name,ext] = fileparts(char(datafile_names{1}));
+
+% Check whether EEGLAB and all necessary plugins are in Matlab path.
+if exist('eeglab','file')==0
+    error(['Please make sure EEGLAB is on your Matlab path. Please see EEGLAB' ...
+        'wiki page for download and instalation instructions']);
+end
+
+% Create output folders to save data
+if exist(output_location, 'dir') == 0
+    mkdir(output_location)
+end
+
+%% Plot ERPs!!
+
+%load the mat file that has the erps and subject list
+load('/home/data/NDClab/analyses/diverse-hair-eeg-alpha/derivatives/dheeg_flanker_Resp_erps_min_6t_05_24_2026_21_19_54.mat')
+
+%make a copy/rename the erp matrix 
+allData = erpDat_data;
+
+%load in one of the participants EEGLAB-formatted data; this is to load
+%parameters needed for plotting (sampling rate, chanlocs, etc).
+EEG = pop_loadset( 'filename', datafile_names{1}, 'filepath', data_location);
+EEG = eeg_checkset(EEG);
+
+%round EEG.times to nearest whole ms to make easier to work with
+EEG.times = round(EEG.times);
+
+%setup for baseline correcting the ERP data (always done before plotting or extracting
+%erps, not done to the data previously to allow use of different baselines
+%as a function of review comments)
+startTime = -400; %(in ms)
+endTime = -200 ; %(in ms)
+
+%find closest values in (rounded) EEG.times to the specified start/stop
+[temp,startIdx] = min(abs(EEG.times-startTime));
+[temp2,endIdx] = min(abs(EEG.times-endTime));
+
+%baseline corrections
+Range = startIdx:endIdx;
+allBase = squeeze(mean(allData(:,:,:,Range),4));
+allBase = mean(allData(:,:,:,Range),4);
+
+for i=1:size(allData,4)
+    newData(:,:,:,i) = allData(:,:,:,i) - allBase;
+end
+
+%select channel(s) to plot: frontocentral cluster
+chan = (newData(:,:,[1 2 34 33],:));
+chan = mean(chan,3);
+
+%pull out four conditions of interest for all subs
+resp_social_error = chan(:,1,:,:);
+resp_social_corr = chan(:,2,:,:);
+resp_nonsocial_error = chan(:,3,:,:);
+resp_nonsocial_correct = chan(:,4,:,:);
+
+%average across subs
+resp_social_errorMean = squeeze(mean(resp_social_error,1));
+resp_social_corrMean = squeeze(mean(resp_social_corr,1));
+resp_nonsocial_errorMean = squeeze(mean(resp_nonsocial_error,1));
+resp_nonsocial_correctMean = squeeze(mean(resp_nonsocial_correct,1));
+
+%label for plot and define colors for plot
+blue = [0  0 1];
+red = [1 0 0];
+
+%plot the two response-related erps
+figure;
+hold on
+plot(EEG.times, resp_social_errorMean, 'color', red, 'LineWidth', 2.5);
+plot(EEG.times, resp_social_corrMean, 'color', blue, 'LineWidth', 2.5);
+plot(EEG.times, resp_nonsocial_errorMean, 'color', red, 'LineWidth', 2.5, 'LineStyle', ':');
+plot(EEG.times, resp_nonsocial_correctMean, 'color', blue, 'LineWidth', 2.5, 'LineStyle', ':');
+%title(sprintf('Frontcentral Electrodes, Dotted is Nonsocial'), 'FontSize', 30);
+legendHandle = legend('Social-Error', 'Social-Correct', 'Alone-Error', 'Alone-Correct');
+set(legendHandle, 'box', 'off', 'FontSize', 26);
+hold off;
+
+% set parameters
+plotStartTime = -400; %(in ms)
+plotEndTime = 600 ; %(in ms)
+set(gcf, 'Color', [1 1 1]);
+set(gca, 'YLim', [-10 20]);
+set(gca, 'XLim', [plotStartTime plotEndTime]);
+set(gca, 'FontSize', 20);
+set(get(gca, 'YLabel'), 'String', 'Amplitude in  \muV', 'FontSize', 26);
+set(get(gca, 'XLabel'), 'String', 'Time Relative to Response (ms)', 'FontSize', 26);
+set(gca, 'Box', 'off');
+set(gcf, 'Position', [0 0 1440 900]);
+grid on;
+saveas(gcf, 'erpDat_p_86_baseline_-400_-200_chans_1_2_33_34.png');
+
+%% Plot topos!!
+
+%load the mat file that has the erps and subject list
+load('C:\Users\cknowlto\Documents\OneDrive - Florida International University\Documents\ReadPrelimAnalysis\EEG_training\Data\Processed_Data\postprocessing\read_flanker_Resp_erps_min_6t_12_11_2025_18_44_10.mat')
+
+%make a copy/rename the erp matrix 
+allData = erpDat_data;
+
+%load in one of the participants EEGLAB-formatted data; this is to load
+%parameters needed for plotting (sampling rate, chanlocs, etc).
+EEG = pop_loadset( 'filename', datafile_names{1}, 'filepath', data_location);
+EEG = eeg_checkset(EEG);
+eeglab redraw
+
+%round EEG.times to nearest whole ms to make easier to work with
+EEG.times = round(EEG.times);
+
+%setup for baseline correcting the ERP data (always done before plotting or extracting
+%erps, not done to the data previously to allow use of different baselines
+%as a function of review comments)
+startTime = -400; %(in ms)
+endTime = -200 ; %(in ms)
+
+%find closest values in (rounded) EEG.times to the specified start/stop
+[temp,startIdx] = min(abs(EEG.times-startTime));
+[temp2,endIdx] = min(abs(EEG.times-endTime));
+
+%baseline corrections
+Range = startIdx:endIdx;
+allBase = squeeze(mean(allData(:,:,:,Range),4));
+allBase = mean(allData(:,:,:,Range),4);
+
+for i=1:size(allData,4)
+    newData(:,:,:,i) = allData(:,:,:,i) - allBase;
+end
+
+%start and end time range for component of interest
+compStartTime = 0; %(in ms)
+compEndTime = 100 ; %(in ms)
+
+%find closest values in (rounded) EEG.times to the specified start/stop
+[temp,compStartIdx] = min(abs(EEG.times-compStartTime));
+[temp2,compEndIdx] = min(abs(EEG.times-compEndTime));
+
+%idxs of time range to plot topo for
+compRange = compStartIdx:compEndIdx;
+
+%pull out four conditions of interest for all subs
+resp_social_error = mean(newData(:,1,:,compRange),4);
+resp_social_corr = mean(newData(:,2,:,compRange),4);
+resp_nonsocial_error = mean(newData(:,3,:,compRange),4);
+resp_nonsocial_correct = mean(newData(:,4,:,compRange),4);
+
+%average across subs
+resp_social_errorMean = squeeze(mean(resp_social_error,1));
+resp_social_corrMean = squeeze(mean(resp_social_corr,1));
+resp_nonsocial_errorMean = squeeze(mean(resp_nonsocial_error,1));
+resp_nonsocial_correctMean = squeeze(mean(resp_nonsocial_correct,1));
+
+%compute difference topo
+resp_social_errorMean_diff = resp_social_errorMean - resp_social_corrMean;
+resp_nonsocial_errorMean_diff = resp_nonsocial_errorMean - resp_nonsocial_correctMean;
+resp_error_social_minus_nonsocial_Mean_diff = resp_social_errorMean - resp_nonsocial_errorMean;
+
+%plot topos
+figure
+topoplot(resp_error_social_minus_nonsocial_Mean_diff, EEG.chanlocs, 'maplimits', [-1 1], 'electrodes', 'on', 'gridscale', 300, 'plotrad', .6)
+set(get(gca, 'title'), 'String', 'Social Minus Alone Error (0-100 ms)', 'FontSize', 20);
+
+cbar = colorbar;
+cbar.Label.String = 'Amplitude (V)';
+cbar.Label.FontSize = 14;
+set(cbar, 'FontSize', 12);
+saveas(gcf, 'erpDat_topo_p_86_baseline_-400_-200_social_alone_error.png');
+
+figure
+topoplot(resp_social_errorMean_diff, EEG.chanlocs, 'maplimits', [-4 4], 'electrodes', 'on', 'gridscale', 300)
+set(get(gca, 'title'), 'String', 'Social Error Minus Correct (0-100 ms)', 'FontSize', 20);
+
+cbar = colorbar;
+cbar.Label.String = 'Amplitude (V)';
+cbar.Label.FontSize = 14;
+set(cbar, 'FontSize', 12);
+saveas(gcf, 'erpDat_topo_p_86_baseline_-400_-200_social_alone_correct.png');
+
+figure
+topoplot(resp_nonsocial_errorMean_diff, EEG.chanlocs, 'maplimits', [-4 4], 'electrodes', 'on', 'gridscale', 300)
+set(get(gca, 'title'), 'String', 'Alone Error Minus Correct (0-100 ms)', 'FontSize', 20);
+
+cbar = colorbar;
+cbar.Label.String = 'Amplitude (V)';
+cbar.Label.FontSize = 14;
+set(cbar, 'FontSize', 12);
+saveas(gcf, 'erpDat_topo_p_86_baseline_-400_-200_alone_error_correct.png');
