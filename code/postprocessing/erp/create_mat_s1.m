@@ -129,9 +129,11 @@ acc_cutoff = .6;
 %file that data is saved into)
 pIdx = 1;
 
-%initialize matrices to hold erp data and corresponding sub ids
+%initialize matrices to hold erp data, corresponding sub ids, and the
+%analytic sme measurement
 erpDat_data = [];
 erpDat_subIds = [];
+aSME = [];
 
 % loop through each participant in the study
 for subject = 1:length(datafile_names)
@@ -205,6 +207,21 @@ for subject = 1:length(datafile_names)
         % this all Channel ERP only needs to be computed once
         % per condition
         meanEpochs = mean(EEG1.data, 3);
+
+        % Analytic SME (aSME) for the mean-amplitude score
+        measStart = 0; measEnd = 100;
+        baseStart = -400; baseEnd = -200;
+        
+        t = round(EEG1.times);
+        [~,mS]=min(abs(t-measStart)); [~,mE]=min(abs(t-measEnd));
+        [~,bS]=min(abs(t-baseStart)); [~,bE]=min(abs(t-baseEnd));
+        win = mS:mE; baseWin = bS:bE;
+        
+        channels = [1 4]; %2 frontal electrodes avaliable in SEP set up
+        d  = EEG1.data - mean(EEG1.data(:,baseWin,:), 2); %baseline correction
+        dd = squeeze(mean(d(channels,:,:), 1));
+        sc = mean(dd(win,:), 1);
+        aSME(pIdx,c) = std(sc) / sqrt(numel(sc));
 
         %store data for this condition in array
         erpDat_data(pIdx,c,:,:)= meanEpochs;
