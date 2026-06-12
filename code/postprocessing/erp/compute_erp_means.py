@@ -11,15 +11,12 @@ import h5py
 session = "s1_r1"
 laplacian = False
 
-dataset_path = "C:\Users\cknowlto\temp\diverse-hair-eeg-dataset\"
-analysis_path = "C:\Users\cknowlto\temp\diverse-hair-eeg-alpha\"
+dataset_path = "/home/data/NDClab/datasets/diverse-hair-eeg-dataset/"
+analysis_path = "/home/data/NDClab/analyses/diverse-hair-eeg-alpha/"
 
 outputHeader = [
     'id',
-    'ERN_soc', 'CRN_soc', 'ERN_nonsoc', 'CRN_nonsoc',
-    'ERN_min_CRN_diff_soc', 'ERN_min_CRN_diff_nonsoc',
-    # 'PE_error_soc', 'PE_corr_soc', 'PE_error_nonsoc', 'PE_corr_nonsoc',
-    # 'PE_err_min_corr_diff_soc', 'PE_err_min_corr_diff_nonsoc'
+    'ERN', 'CRN', 'ERN_min_CRN_diff',
 ]
 
 output_data = pd.DataFrame()
@@ -34,13 +31,10 @@ timeCell = [
     # [300, 500], # PE cluster
 ]
 
-if laplacian:
-    #path_to_mat = glob(f"{analysis_path}/derivatives/preprocessed/erp_check/{session}/dheeg_Resp_erps_csd_min_6t_*2025*.mat")[0]
-else:
-    path_to_mat = glob(f"{analysis_path}/derivatives/dheeg_flanker_Resp_erps_min_6t_05_24_2026_21_19_54.mat")[0] #latest file; computed on "checked" data
-    #path_to_mat = glob(f"{analysis_path}/derivatives/preprocessed/erp_check/{session}/dheeg_Resp_erps_min_6t_02_11_2025_15_17_33.mat")[0]
+path_to_mat = glob(f"{analysis_path}/derivatives/dheeg_flanker_Resp_erps_min_6t_05_31_2026_18_31_22.mat")[0] #latest file; computed on "checked" data
+#path_to_mat = glob(f"{analysis_path}/derivatives/preprocessed/erp_check/{session}/dheeg_Resp_erps_min_6t_02_11_2025_15_17_33.mat")[0]
 
-path_to_eeg = glob(f"{dataset_path}/derivatives/preprocessed/sub-290005/eeg/sub-290005_flanker_eeg_filtered_data_s1_r1_e1.set")[0]
+path_to_eeg = glob(f"{dataset_path}/derivatives/preprocessed/sub-290012/eeg/sub-290012_flanker_eeg_processed_data_s1_r1_e1.set")[0]
 
 mat = scipy.io.loadmat(path_to_mat)
 allData = mat['erpDat_data']
@@ -86,8 +80,8 @@ for comp in range(len(clustCell)):
     resp_incon_corr_avgTime = np.mean(newData[:, 1:2, :, compStartIdx:compEndIdx+1], 3)
 
     # average cluster of interest
-    resp_incon_error_avgTimeClust = np.mean(s_resp_incon_error_avgTime[:, :, cluster], 2)
-    resp_incon_corr_avgTimeClust = np.mean(s_resp_incon_corr_avgTime[:, :, cluster], 2)
+    resp_incon_error_avgTimeClust = np.mean(resp_incon_error_avgTime[:, :, cluster], 2)
+    resp_incon_corr_avgTimeClust = np.mean(resp_incon_corr_avgTime[:, :, cluster], 2)
 
     # compute difference score
     resp_incon_error_avgTimeClust_diff = resp_incon_error_avgTimeClust - resp_incon_corr_avgTimeClust

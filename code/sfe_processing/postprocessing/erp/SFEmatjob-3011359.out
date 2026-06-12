@@ -1,0 +1,6 @@
+WARNING: $PATH does not agree with $PATH_modshare counter. The following directories' usage counters were adjusted to match. Note that this may mean that module unloading may not work correctly.
+ /home/share/bin/ /bin/
+/home/data/NDClab/analyses/diverse-hair-eeg-alpha/code/sfe_processing/postprocessing/erp
+n121.panther.net
+Thu Jun 11 17:29:48 EDT 2026
+slurmstepd: error: *** JOB 3011359 ON n121 CANCELLED AT 2026-06-11T17:30:42 ***

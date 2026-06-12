@@ -149,13 +149,13 @@ for subject = 1:length(datafile_names)
 
     %if participant has low accuracy in either condition, skip that
     %participant for ALL conditions
-    % if (behavior_info{behavior_id_match_idxs,'acc_nonsoc'} < acc_cutoff || behavior_info{behavior_id_match_idxs,'acc_soc'} < acc_cutoff)
-    %     continue
-    % end
-    % 
-    % if (behavior_info{behavior_id_match_idxs,'x6_or_more_err_nonsoc'} < 6 || behavior_info{behavior_id_match_idxs,'x6_or_more_err_soc'} < 6)
-    %     continue
-    % end
+    if (behavior_info{behavior_id_match_idxs,'acc'} < acc_cutoff)
+        continue
+    end
+     
+    %if (behavior_info{behavior_id_match_idxs,'6_or_more_err'} == 0) all participants have > 60% behavioral accuracy
+        %continue
+    %end
     %load the original data set
     EEG = pop_loadset( 'filename', datafile_names{subject}, 'filepath', datafile_paths{subject});
     EEG = eeg_checkset( EEG );
@@ -240,4 +240,4 @@ for subject = 1:length(datafile_names)
 end
 
 %save the erps and subject list
-save(sprintf('dheeg_flanker_Resp_erps_min_6t_%s.mat', datestr(now, 'mm_dd_yyyy_HH_MM_SS')), 'erpDat_data', 'erpDat_subIds')
+save(sprintf('sfe_flanker_Resp_erps_min_6t_%s.mat', datestr(now, 'mm_dd_yyyy_HH_MM_SS')), 'erpDat_data', 'erpDat_subIds', 'aSME')
